@@ -44,7 +44,9 @@ module.exports = function (/* ctx */) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: 'history',
-      publicPath: 'quasar-qmarkdown',
+      publicPath: process.env.NODE_ENV === 'production'
+    ? '/test-quasar/' // Thay tên repository của các bạn vào đây nhé
+    : '/'
       // transpile: false,
 
       // Add dependencies for transpiling with Babel (Array of string/regex)
